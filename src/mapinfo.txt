@@ -14,4 +14,10 @@ Episode "test map 01"
 Map "test map 01" "My Custom Map"
 {
 	music = "d_dead"
+	Next = "ELHOUSE1"
+}
+
+Map "ELHOUSE1" "Eliot's House"
+{
+	music = "d_dead"
 }
