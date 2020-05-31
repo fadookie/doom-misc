@@ -6,18 +6,26 @@
 
 ClearEpisodes
 
-Episode "test map 01"
+gameinfo {
+	PlayerClasses = "GagePlayer"
+  // AddEventHandlers = "PhoenixPowerHandler", "DazzlerPowerHandler"
+	// creditpage = "CREDIT1", "CREDIT2"
+	// finalepage = "credits"
+	// titlemusic = "music/xmen.mid"
+}
+
+Episode "mars"
 {
 	Name = "My Project"
+}
+
+Map "mars" "Mars Colony"
+{
+	music = "music/marsmaze.mp3"
 }
 
 Map "test map 01" "My Custom Map"
 {
 	music = "d_dead"
 	Next = "ELHOUSE1"
-}
-
-Map "ELHOUSE1" "Eliot's House"
-{
-	music = "d_dead"
 }

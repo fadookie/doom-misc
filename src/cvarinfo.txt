@@ -1,0 +1,1 @@
+noarchive server int print_inventory_flag = 0;
