@@ -1,5 +1,8 @@
 class GagePlayer : DoomPlayer
 {
+  int challengeStartTimeTk;
+  const oxygenDurationS = 30;
+
 	Default {
 		// Height 32;
 // 		CameraHeight 100;
@@ -32,13 +35,25 @@ class GagePlayer : DoomPlayer
 	override void PostBeginPlay()
     {
 		super.PostBeginPlay();
-		A_Log("Player init");
+		// A_Log("Player init");
 		// ClearInventory();
+    challengeStartTimeTk = level.time;
 	}
 	
 	override void Tick()
 	{
 		Super.Tick();
+
+    let timeSinceStartTk = level.time - challengeStartTimeTk;
+		let timeSinceStartS = Thinker.Tics2Seconds(timeSinceStartTk);
+    A_SetInventory("Clip", oxygenDurationS - timeSinceStartS);
+    if((oxygenDurationS - 10) * 35 == timeSinceStartTk) {
+      Console.Printf("Oxygen levels critical!");
+    }
+    if (oxygenDurationS * 35 == timeSinceStartTk) {
+			Console.Printf("You ran out of oxygen!");
+      A_Die();
+    }
 
 		// Check for DEBUG options
 		let printInventoryFlagCV = CVar.FindCVar("print_inventory_flag");

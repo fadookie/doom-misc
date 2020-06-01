@@ -11,12 +11,13 @@ gameinfo {
   // AddEventHandlers = "PhoenixPowerHandler", "DazzlerPowerHandler"
 	// creditpage = "CREDIT1", "CREDIT2"
 	// finalepage = "credits"
-	// titlemusic = "music/xmen.mid"
+	titlemusic = "music/titlemusic.mp3"
 }
 
 Episode "mars"
 {
-	Name = "My Project"
+	Name = "Journeyman Project: Demake Tech Demo"
+	noskillmenu
 }
 
 Map "mars" "Mars Colony"
